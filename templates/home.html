@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+
+    <style>
+        #port_add{
+        display: block;
+        position: absolute;
+        top:15%;
+        left:25%;
+        border: 5px solid powderblue;
+
+
+        }
+        h1{
+
+            position: relative;
+            left:25%;
+
+           }
+
+
+
+
+    </style>
+
+
+
+
+</head>
+<body>
+
+<div id="port_add">
+
+    <h1>Currency Converter</h1>
+
+    <form action="{% url 'main' %}">
+
+    <label>Home Currency</label>
+    <select name="Home_Currency">
+        <option value="" selected>-----Select Home Currency----- </option>
+        {% for colour in home_currency %}
+            <option value="{{colour}}">{{colour}}</option>
+        {% endfor %}
+    </select>
+    <label>Target Currency</label>
+    <select name="Target_Currency">
+        <option value="" selected>-----Select Target Currency----- </option>
+        {% for colour in home_currency %}
+            <option value="{{colour}}">{{colour}}</option>
+        {% endfor %}
+    </select>
+    <br/><br/>
+    <label>Enter the Amount</label> <input type="text" name="fname">
+
+    <label>Target Currency Value: {{ output_value }}</label>
+    <br/>
+    <br/>
+    <input type="submit" value="Currency Converter"/>
+
+    </form>
+    <br/>
+    <br/>
+
+
+</div>
+
+
+
+
+</body>
+</html>
